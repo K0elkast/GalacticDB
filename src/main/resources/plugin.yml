@@ -1,0 +1,13 @@
+name: GalacticDB
+version: '1.1'
+main: Dev.Damien.galacticDB.GalacticDB
+api-version: '1.21'
+commands:
+  reloadDB:
+    description: Stabiliseerd de verbinding met de DB
+    usage: /reloadDB
+    permission: DB.Reload
+permissions:
+  DB.Reload:
+    description: staat toe om de verbinding te stabiliseren
+    default: op
