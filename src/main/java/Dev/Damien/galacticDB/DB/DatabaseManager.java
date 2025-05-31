@@ -64,4 +64,13 @@ public class DatabaseManager {
 
         }
     }
+    public void clearAllPlayers() {
+        String query = "DELETE FROM players";
+        try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.executeUpdate();
+            System.out.println("Alle spelers zijn verwijderd uit de database.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

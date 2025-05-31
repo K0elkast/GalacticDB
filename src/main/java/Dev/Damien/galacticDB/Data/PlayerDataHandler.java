@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 public class PlayerDataHandler implements Listener {
@@ -33,7 +34,13 @@ public class PlayerDataHandler implements Listener {
 
         databaseManager.removePlayerData(uuid);
     }
+    @EventHandler
+    public void onPlayerKick(PlayerKickEvent event) {
+        Player player = event.getPlayer();
+        String uuid = player.getUniqueId().toString();
 
+        databaseManager.removePlayerData(uuid);
+    }
     private String getPlayerRank(Player player) {
         LuckPerms luckPerms = LuckPermsProvider.get();
         User user = luckPerms.getUserManager().getUser(player.getUniqueId());

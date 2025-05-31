@@ -33,5 +33,7 @@ public final class GalacticDB extends JavaPlugin {
     @Override
     public void onDisable() {
         getLogger().info("DB is gestorven door eenzaamheid");
+        databaseManager.clearAllPlayers();
     }
 }
+
