@@ -6,9 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DatabaseManager {
-    private static final String  jdbcUrl = "jdbc:mariadb://45.131.60.10:3306/galactic_database";
-    private static final String USER = "galactic_database";
-    private static final String PASSWORD = "yK^%T4GEy^dBA#KRQpvL";
+    private static final String  jdbcUrl = "<jdbcStting>";
+    private static final String USER = "<Username>";
+    private static final String PASSWORD = "<Password>";
 
     public void reloadDatabase() {
         try {
